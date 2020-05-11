@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "624418689014",
+    "firebase_url": "https://goonow-c28af.firebaseio.com",
+    "project_id": "goonow-c28af",
+    "storage_bucket": "goonow-c28af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624418689014:android:e2ef9247d267a9b05181d7",
+        "android_client_info": {
+          "package_name": "com.Aredbullx1.GooNow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624418689014-72h5o8sh67595q6779i1rbta6s8dlt0n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Aredbullx1.GooNow",
+            "certificate_hash": "db410b4321f6851e0fa3963ae19fd410f99fefd7"
+          }
+        },
+        {
+          "client_id": "624418689014-68csdrbnkgco8j9o7e36ov5oht24gth0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADx1PYCjjmLgn71WRMS6n9z62MFDW5M-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624418689014-68csdrbnkgco8j9o7e36ov5oht24gth0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
