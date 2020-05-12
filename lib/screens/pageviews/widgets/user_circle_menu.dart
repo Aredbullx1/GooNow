@@ -1,8 +1,8 @@
-import 'package:GooNow/screens/chatscreens/widgets/cached_image.dart';
+import '../../../screens/chatscreens/widgets/cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:GooNow/provider/user_provider.dart';
-import 'package:GooNow/utils/universal_variables.dart';
+import '../../../provider/user_provider.dart';
+import '../../../utils/universal_variables.dart';
 
 class UserCircleM extends StatelessWidget {
   @override

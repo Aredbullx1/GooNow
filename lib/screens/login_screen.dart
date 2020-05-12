@@ -1,10 +1,10 @@
-import 'package:GooNow/screens/menu_dashboard_layout.dart';
+import '../screens/menu_dashboard_layout.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:GooNow/resources/auth_methods.dart';
-import 'package:GooNow/utils/universal_variables.dart';
+import '../resources/auth_methods.dart';
+import '../utils/universal_variables.dart';
 import 'package:avatar_glow/avatar_glow.dart';
-import 'package:GooNow/utils/delayed_animation.dart';
+import '../utils/delayed_animation.dart';
 import 'package:flutter/services.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -174,7 +174,7 @@ class LoginScreenState extends State<LoginScreen>
   }
 
   void performLogin() {
-    print("tring to perform login");
+    debugPrint("tring to perform login");
 
     setState(() {
       isLoginPressed = true;
@@ -184,7 +184,7 @@ class LoginScreenState extends State<LoginScreen>
       if (user != null) {
         authenticateUser(user);
       } else {
-        print("There was an error");
+        debugPrint("There was an error");
       }
     });
   }

@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:GooNow/enum/user_state.dart';
-import 'package:GooNow/models/user.dart';
-import 'package:GooNow/resources/auth_methods.dart';
-import 'package:GooNow/utils/utilities.dart';
+import '../../../enum/user_state.dart';
+import '../../../models/user.dart';
+import '../../../resources/auth_methods.dart';
+import '../../../utils/utilities.dart';
 
 class OnlineDotIndicator extends StatelessWidget {
   final String uid;

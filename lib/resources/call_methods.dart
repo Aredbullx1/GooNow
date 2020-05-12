@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:GooNow/constants/strings.dart';
-import 'package:GooNow/models/call.dart';
+import '../constants/strings.dart';
+import '../models/call.dart';
+import 'package:flutter/material.dart';
 
 class CallMethods {
   final CollectionReference callCollection =
@@ -21,7 +22,7 @@ class CallMethods {
       await callCollection.document(call.receiverId).setData(hasNotDialledMap);
       return true;
     } catch (e) {
-      print(e);
+      debugPrint(e);
       return false;
     }
   }
@@ -32,7 +33,7 @@ class CallMethods {
       await callCollection.document(call.receiverId).delete();
       return true;
     } catch (e) {
-      print(e);
+      debugPrint(e);
       return false;
     }
   }

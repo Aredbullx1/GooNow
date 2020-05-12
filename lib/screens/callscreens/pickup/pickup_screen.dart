@@ -1,10 +1,10 @@
-import 'package:GooNow/utils/universal_variables.dart';
+import '../../../utils/universal_variables.dart';
 import 'package:flutter/material.dart';
-import 'package:GooNow/models/call.dart';
-import 'package:GooNow/resources/call_methods.dart';
-import 'package:GooNow/screens/callscreens/call_screen.dart';
-import 'package:GooNow/screens/chatscreens/widgets/cached_image.dart';
-import 'package:GooNow/utils/permissions.dart';
+import '../../../models/call.dart';
+import '../../../resources/call_methods.dart';
+import '../../../screens/callscreens/call_screen.dart';
+import '../../../screens/chatscreens/widgets/cached_image.dart';
+import '../../../utils/permissions.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 
 class PickupScreen extends StatelessWidget {

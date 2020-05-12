@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:GooNow/constants/strings.dart';
-import 'package:GooNow/enum/user_state.dart';
-import 'package:GooNow/models/user.dart';
-import 'package:GooNow/utils/utilities.dart';
+import '../constants/strings.dart';
+import '../enum/user_state.dart';
+import '../models/user.dart';
+import '../utils/utilities.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AuthMethods {
@@ -38,7 +38,7 @@ class AuthMethods {
           await _userCollection.document(id).get();
       return User.fromMap(documentSnapshot.data);
     } catch (e) {
-      print(e);
+      debugPrint(e);
       return null;
     }
   }

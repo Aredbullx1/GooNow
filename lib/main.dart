@@ -1,13 +1,13 @@
-import 'package:GooNow/screens/menu_dashboard_layout.dart';
+import 'screens/menu_dashboard_layout.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' ;
 import 'package:provider/provider.dart';
-import 'package:GooNow/provider/image_upload_provider.dart';
-import 'package:GooNow/provider/user_provider.dart';
-import 'package:GooNow/resources/auth_methods.dart';
-import 'package:GooNow/screens/login_screen.dart';
-import 'package:GooNow/screens/search_screen.dart';
+import 'provider/image_upload_provider.dart';
+import 'provider/user_provider.dart';
+import 'resources/auth_methods.dart';
+import 'screens/login_screen.dart';
+import 'screens/search_screen.dart';
 
 void main() => runApp(MyApp());
 

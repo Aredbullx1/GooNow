@@ -7,10 +7,10 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:provider/provider.dart';
-import 'package:GooNow/configs/agora_configs.dart';
-import 'package:GooNow/models/call.dart';
-import 'package:GooNow/provider/user_provider.dart';
-import 'package:GooNow/resources/call_methods.dart';
+import '../../configs/agora_configs.dart';
+import '../../models/call.dart';
+import '../../provider/user_provider.dart';
+import '../../resources/call_methods.dart';
 import 'package:wakelock/wakelock.dart';
 
 class CallScreen extends StatefulWidget {

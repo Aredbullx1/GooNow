@@ -1,10 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:GooNow/models/call.dart';
-import 'package:GooNow/models/user.dart';
-import 'package:GooNow/resources/call_methods.dart';
-import 'package:GooNow/screens/callscreens/call_screen.dart';
+import '../models/call.dart';
+import '../models/user.dart';
+import '../resources/call_methods.dart';
+import '../screens/callscreens/call_screen.dart';
 
 class CallUtils {
   static final CallMethods callMethods = CallMethods();

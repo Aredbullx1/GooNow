@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:GooNow/enum/view_state.dart';
+import '../enum/view_state.dart';
 
 class ImageUploadProvider with ChangeNotifier {
   ViewState _viewState = ViewState.IDLE;

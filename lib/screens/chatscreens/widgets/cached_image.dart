@@ -41,7 +41,7 @@ class CachedImage extends StatelessWidget {
         ),
       );
     } catch (e) {
-      print(e);
+      debugPrint(e);
       return Image.network(noImageAvailable, fit: BoxFit.cover);
     }
   }

@@ -2,10 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 import 'package:provider/provider.dart';
-import 'package:GooNow/models/call.dart';
-import 'package:GooNow/provider/user_provider.dart';
-import 'package:GooNow/resources/call_methods.dart';
-import 'package:GooNow/screens/callscreens/pickup/pickup_screen.dart';
+import '../../../models/call.dart';
+import '../../../provider/user_provider.dart';
+import '../../../resources/call_methods.dart';
+import '../../../screens/callscreens/pickup/pickup_screen.dart';
 
 class PickupLayout extends StatelessWidget {
   final Widget scaffold;

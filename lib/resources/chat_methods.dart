@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:GooNow/constants/strings.dart';
-import 'package:GooNow/models/contact.dart';
-import 'package:GooNow/models/message.dart';
-import 'package:GooNow/models/user.dart';
+import '../constants/strings.dart';
+import '../models/contact.dart';
+import '../models/message.dart';
+import '../models/user.dart';
 
 class ChatMethods {
   static final Firestore _firestore = Firestore.instance;

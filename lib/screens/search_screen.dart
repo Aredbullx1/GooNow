@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
-import 'package:GooNow/models/user.dart';
-import 'package:GooNow/resources/auth_methods.dart';
-import 'package:GooNow/screens/callscreens/pickup/pickup_layout.dart';
-import 'package:GooNow/screens/chatscreens/chat_screen.dart';
-import 'package:GooNow/utils/universal_variables.dart';
-import 'package:GooNow/widgets/custom_tile.dart';
+import '../models/user.dart';
+import '../resources/auth_methods.dart';
+import '../screens/callscreens/pickup/pickup_layout.dart';
+import '../screens/chatscreens/chat_screen.dart';
+import '../utils/universal_variables.dart';
+import '../widgets/custom_tile.dart';
 
 class SearchScreen extends StatefulWidget {
   @override

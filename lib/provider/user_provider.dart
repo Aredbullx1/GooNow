@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:GooNow/models/user.dart';
-import 'package:GooNow/resources/auth_methods.dart';
+import '../models/user.dart';
+import '../resources/auth_methods.dart';
 
 class UserProvider with ChangeNotifier {
   User _user;

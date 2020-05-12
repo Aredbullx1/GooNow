@@ -2,10 +2,10 @@ import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/widgets.dart';
-import 'package:GooNow/models/user.dart';
-import 'package:GooNow/provider/image_upload_provider.dart';
+import '../models/user.dart';
+import '../provider/image_upload_provider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:GooNow/resources/chat_methods.dart';
+import '../resources/chat_methods.dart';
 
 class StorageMethods {
   static final Firestore firestore = Firestore.instance;

@@ -2,12 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
-import 'package:GooNow/enum/user_state.dart';
-import 'package:GooNow/provider/user_provider.dart';
-import 'package:GooNow/resources/auth_methods.dart';
-import 'package:GooNow/screens/callscreens/pickup/pickup_layout.dart';
-import 'package:GooNow/screens/pageviews/chat_list_screen.dart';
-import 'package:GooNow/utils/universal_variables.dart';
+import '../enum/user_state.dart';
+import '../provider/user_provider.dart';
+import '../resources/auth_methods.dart';
+import '../screens/callscreens/pickup/pickup_layout.dart';
+import '../screens/pageviews/chat_list_screen.dart';
+import '../utils/universal_variables.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -59,25 +59,25 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         currentUserId != null
             ? _authMethods.setUserState(
                 userId: currentUserId, userState: UserState.Online)
-            : print("resume state");
+            : debugPrint("resume state");
         break;
       case AppLifecycleState.inactive:
         currentUserId != null
             ? _authMethods.setUserState(
                 userId: currentUserId, userState: UserState.Offline)
-            : print("inactive state");
+            : debugPrint("inactive state");
         break;
       case AppLifecycleState.paused:
         currentUserId != null
             ? _authMethods.setUserState(
                 userId: currentUserId, userState: UserState.Waiting)
-            : print("paused state");
+            : debugPrint("paused state");
         break;
       case AppLifecycleState.detached:
         currentUserId != null
             ? _authMethods.setUserState(
                 userId: currentUserId, userState: UserState.Offline)
-            : print("detached state");
+            : debugPrint("detached state");
         break;
     }
   }
