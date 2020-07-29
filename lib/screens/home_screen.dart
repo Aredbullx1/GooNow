@@ -1,7 +1,9 @@
+import 'package:GooNow/screens/callhistory/calls_history_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import '../enum/user_state.dart';
 import '../provider/user_provider.dart';
 import '../resources/auth_methods.dart';
@@ -17,6 +19,29 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   PageController pageController;
   final AuthMethods _authMethods = AuthMethods();
+  int _page = 0;
+
+  final ChatListScreen _chatScreen = ChatListScreen();
+  final CallsHistoryScreen _callsHistoryScreen = new CallsHistoryScreen();
+
+  Widget _showPage = new ChatListScreen();
+
+  Widget _pageChooser(int page) {
+    switch (page) {
+      case 0:
+        return _chatScreen;
+        break;
+      case 1:
+        return _callsHistoryScreen;
+        break;
+      default:
+        return new Container(
+          child: new Center(
+            child: new Text('No Page Found'),
+          ),
+        );
+    }
+  }
 
   UserProvider userProvider;
 
@@ -91,10 +116,25 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     return PickupLayout(
       scaffold: Scaffold(
         backgroundColor: UniversalVariables.blackColor,
+        bottomNavigationBar: CurvedNavigationBar(
+          index: _page,
+          backgroundColor: UniversalVariables.blackColor,
+          buttonBackgroundColor: UniversalVariables.lightBlueColor,
+          color: Colors.transparent,
+          items: <Widget>[
+            Icon(Icons.chat, color: Colors.white, size: 30),
+            Icon(Icons.call_split, color: Colors.white, size: 30)
+          ],
+          onTap: (int tappedIndex) {
+            setState(() {
+              _showPage = _pageChooser(tappedIndex);
+            });
+          },
+        ),
         body: PageView(
           children: <Widget>[
             Container(
-              child: ChatListScreen(),
+              child: _showPage,
             ),
           ],
           controller: pageController,

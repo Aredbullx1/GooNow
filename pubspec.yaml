@@ -43,6 +43,7 @@ dependencies:
   wakelock: ^0.1.4+1
   avatar_glow: ^1.1.0
   flutter_ringtone_player: ^2.0.0
+  curved_navigation_bar: ^0.3.3
 
 dev_dependencies:
   flutter_launcher_icons: "^0.7.5"
