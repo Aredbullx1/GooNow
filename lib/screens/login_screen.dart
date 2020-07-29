@@ -46,6 +46,7 @@ class LoginScreenState extends State<LoginScreen>
     final color = Colors.white;
     _scale = 1 - _controller.value;
     return MaterialApp(
+      title: 'GooNow',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: UniversalVariables.blackColor,

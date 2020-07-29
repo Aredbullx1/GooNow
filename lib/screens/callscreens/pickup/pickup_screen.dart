@@ -63,14 +63,14 @@ class PickupScreen extends StatelessWidget {
                   color: Colors.green,
                   onPressed: () async {
                     FlutterRingtonePlayer.stop();
-                    await Permissions.cameraAndMicrophonePermissionsGranted()
-                        ? Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => CallScreen(call: call),
-                            ),
-                          )
-                        : {};
+                    if (await Permissions.cameraAndMicrophonePermissionsGranted()) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CallScreen(call: call),
+                        ),
+                      );
+                    }
                   },
                 ),
               ],
