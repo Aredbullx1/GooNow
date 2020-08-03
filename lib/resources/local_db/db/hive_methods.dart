@@ -1,34 +1,65 @@
+import 'dart:io';
+
 import 'package:GooNow/models/log.dart';
 import 'package:GooNow/resources/local_db/interface/log_interface.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
 class HiveMethods implements LogInterface {
+  String hive_box = "Call_Logs";
+
   @override
-  addLogs(Log log) {
-    print("Añadiendo valores a la BD de Hive");
-    return null;
+  init() async {
+    Directory dir = await getApplicationDocumentsDirectory();
+    Hive.init(dir.path);
   }
 
   @override
-  close() {
-    // TODO: implement close
-    return null;
+  addLogs(Log log) async {
+    var box = await Hive.openBox(hive_box);
+
+    var logMap = log.toMap(log);
+
+    // box.put("custom_key", logMap);
+    int idOfInput = await box.add(logMap);
+
+    close();
+
+    return idOfInput;
+  }
+
+  updateLogs(int i, Log newLog) async {
+    var box = await Hive.openBox(hive_box);
+
+    var newLogMap = newLog.toMap(newLog);
+
+    box.putAt(i, newLogMap);
+
+    close();
   }
 
   @override
-  deleteLogs(int logId) {
-    // TODO: implement deleteLogs
-    return null;
+  Future<List<Log>> getLogs() async {
+    var box = await Hive.openBox(hive_box);
+
+    List<Log> logList = [];
+
+    for (int i = 0; i < box.length; i++) {
+      var logMap = box.getAt(i);
+
+      logList.add(Log.fromMap(logMap));
+    }
+    return logList;
   }
 
   @override
-  Future<List<Log>> getLogs() {
-    // TODO: implement getLogs
-    return null;
+  deleteLogs(int logId) async {
+    var box = await Hive.openBox(hive_box);
+
+    await box.deleteAt(logId);
+    // await box.delete(logId);
   }
 
   @override
-  init() {
-    print("Base de datos de Hive inizializada");
-    return null;
-  }
+  close() => Hive.close();
 }
