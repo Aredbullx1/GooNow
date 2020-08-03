@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../screens/search_screen.dart';
-import '../../../utils/universal_variables.dart';
+import '../../../../screens/search_screen.dart';
+import '../../../../utils/universal_variables.dart';
 
 class QuietBox extends StatelessWidget {
   @override

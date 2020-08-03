@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../models/contact.dart';
-import '../../provider/user_provider.dart';
-import '../../resources/chat_methods.dart';
-import '../../screens/callscreens/pickup/pickup_layout.dart';
-import '../../screens/pageviews/widgets/contact_view.dart';
-import '../../screens/pageviews/widgets/new_chat_button.dart';
-import '../../screens/pageviews/widgets/quiet_box.dart';
-import '../../utils/universal_variables.dart';
+import '../../../models/contact.dart';
+import '../../../provider/user_provider.dart';
+import '../../../resources/chat_methods.dart';
+import '../../callscreens/pickup/pickup_layout.dart';
+import '../chats/widgets/contact_view.dart';
+import '../chats/widgets/new_chat_button.dart';
+import '../chats/widgets/quiet_box.dart';
+import '../../../utils/universal_variables.dart';
 
 class ChatListScreen extends StatelessWidget {
   

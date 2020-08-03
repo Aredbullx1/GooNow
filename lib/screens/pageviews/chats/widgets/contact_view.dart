@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../models/contact.dart';
-import '../../../models/user.dart';
-import '../../../provider/user_provider.dart';
-import '../../../resources/auth_methods.dart';
-import '../../../resources/chat_methods.dart';
-import '../../../screens/chatscreens/chat_screen.dart';
-import '../../../screens/chatscreens/widgets/cached_image.dart';
-import '../../../screens/pageviews/widgets/online_dot_indicator.dart';
-import '../../../widgets/custom_tile.dart';
+import '../../../../models/contact.dart';
+import '../../../../models/user.dart';
+import '../../../../provider/user_provider.dart';
+import '../../../../resources/auth_methods.dart';
+import '../../../../resources/chat_methods.dart';
+import '../../../../screens/chatscreens/chat_screen.dart';
+import '../../../../screens/chatscreens/widgets/cached_image.dart';
+import '../../../../screens/pageviews/chats/widgets/online_dot_indicator.dart';
+import '../../../../widgets/custom_tile.dart';
 
 import 'last_message_container.dart';
 

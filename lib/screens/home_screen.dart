@@ -1,4 +1,4 @@
-import 'package:GooNow/screens/callhistory/calls_history_screen.dart';
+import 'package:GooNow/screens/pageviews/logs/log_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -8,7 +8,7 @@ import '../enum/user_state.dart';
 import '../provider/user_provider.dart';
 import '../resources/auth_methods.dart';
 import '../screens/callscreens/pickup/pickup_layout.dart';
-import '../screens/pageviews/chat_list_screen.dart';
+import 'pageviews/chats/chat_list_screen.dart';
 import '../utils/universal_variables.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   int _page = 0;
 
   final ChatListScreen _chatScreen = ChatListScreen();
-  final CallsHistoryScreen _callsHistoryScreen = new CallsHistoryScreen();
+  final LogScreen _logScreen = LogScreen();
 
   Widget _showPage = new ChatListScreen();
 
@@ -32,12 +32,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         return _chatScreen;
         break;
       case 1:
-        return _callsHistoryScreen;
+        return _logScreen;
         break;
       default:
         return new Container(
           child: new Center(
-            child: new Text('No Page Found'),
+            child: new Text('Página no encontrada'),
           ),
         );
     }
@@ -123,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           color: Colors.transparent,
           items: <Widget>[
             Icon(Icons.chat, color: Colors.white, size: 30),
-            Icon(Icons.call_split, color: Colors.white, size: 30)
+            Icon(Icons.call, color: Colors.white, size: 30)
           ],
           onTap: (int tappedIndex) {
             setState(() {
