@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import '../../../screens/search_screen.dart';
-import '../../../utils/universal_variables.dart';
+import '../../../../screens/search_screen.dart';
+import '../../../../utils/universal_variables.dart';
 
 class QuietBox extends StatelessWidget {
+  final String heading;
+  final String subtitle;
+
+  QuietBox({
+    @required this.heading,
+    @required this.subtitle,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -16,7 +24,7 @@ class QuietBox extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                "Parece que no has hablado con nadie",
+                heading,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -25,7 +33,7 @@ class QuietBox extends StatelessWidget {
               ),
               SizedBox(height: 25),
               Text(
-                "Busca a alguien con quien hablar",
+                subtitle,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   letterSpacing: 1.2,

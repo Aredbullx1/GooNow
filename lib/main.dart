@@ -1,7 +1,7 @@
 import 'screens/menu_dashboard_layout.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' ;
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'provider/image_upload_provider.dart';
 import 'provider/user_provider.dart';
@@ -21,7 +21,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]);

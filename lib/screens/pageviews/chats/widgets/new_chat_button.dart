@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../utils/universal_variables.dart';
+import '../../../../utils/universal_variables.dart';
 
 class NewChatButton extends StatelessWidget {
   @override
@@ -13,7 +13,7 @@ class NewChatButton extends StatelessWidget {
             gradient: UniversalVariables.fabGradient,
             borderRadius: BorderRadius.circular(50)),
         child: Icon(
-          Icons.chat,
+          Icons.add_comment,
           color: Colors.white,
           size: 25,
         ),
