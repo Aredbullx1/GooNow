@@ -1,3 +1,6 @@
+import '../../../constants/strings.dart';
+import '../../../models/log.dart';
+import '../../../resources/local_db/repository/log_repository.dart';
 import '../../../utils/universal_variables.dart';
 import 'package:flutter/material.dart';
 import '../../../models/call.dart';
@@ -7,13 +10,42 @@ import '../../../screens/chatscreens/widgets/cached_image.dart';
 import '../../../utils/permissions.dart';
 import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 
-class PickupScreen extends StatelessWidget {
+class PickupScreen extends StatefulWidget {
   final Call call;
-  final CallMethods callMethods = CallMethods();
 
   PickupScreen({
     @required this.call,
   });
+
+  @override
+  _PickupScreenState createState() => _PickupScreenState();
+}
+
+class _PickupScreenState extends State<PickupScreen> {
+  final CallMethods callMethods = CallMethods();
+
+  bool isCallMissed = true;
+
+  addToLocalStorage({@required String callStatus}) {
+    Log log = Log(
+      callerName: widget.call.callerName,
+      callerPic: widget.call.callerPic,
+      receiverName: widget.call.receiverName,
+      receiverPic: widget.call.receiverPic,
+      timestamp: DateTime.now().toString(),
+      callStatus: callStatus,
+    );
+
+    LogRepository.addLogs(log);
+  }
+
+  @override
+  void dispose() {
+    if (isCallMissed) {
+      addToLocalStorage(callStatus: CALL_STATUS_MISSED);
+    }
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +65,13 @@ class PickupScreen extends StatelessWidget {
             ),
             SizedBox(height: 50),
             CachedImage(
-              call.callerPic,
+              widget.call.callerPic,
               isRound: true,
               radius: 180,
             ),
             SizedBox(height: 15),
             Text(
-              call.callerName,
+              widget.call.callerName,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
@@ -54,7 +86,9 @@ class PickupScreen extends StatelessWidget {
                   color: Colors.redAccent,
                   onPressed: () async {
                     FlutterRingtonePlayer.stop();
-                    await callMethods.endCall(call: call);
+                    isCallMissed = false;
+                    addToLocalStorage(callStatus: CALL_STATUS_RECEIVED);
+                    await callMethods.endCall(call: widget.call);
                   },
                 ),
                 SizedBox(width: 25),
@@ -63,11 +97,14 @@ class PickupScreen extends StatelessWidget {
                   color: Colors.green,
                   onPressed: () async {
                     FlutterRingtonePlayer.stop();
-                    if (await Permissions.cameraAndMicrophonePermissionsGranted()) {
+                    isCallMissed = false;
+                    addToLocalStorage(callStatus: CALL_STATUS_RECEIVED);
+                    if (await Permissions
+                        .cameraAndMicrophonePermissionsGranted()) {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CallScreen(call: call),
+                          builder: (context) => CallScreen(call: widget.call),
                         ),
                       );
                     }

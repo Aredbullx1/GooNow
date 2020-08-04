@@ -11,7 +11,6 @@ import '../chats/widgets/quiet_box.dart';
 import '../../../utils/universal_variables.dart';
 
 class ChatListScreen extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return PickupLayout(
@@ -41,7 +40,10 @@ class ChatListContainer extends StatelessWidget {
               var docList = snapshot.data.documents;
 
               if (docList.isEmpty) {
-                return QuietBox();
+                return QuietBox(
+                  heading: "Parece que no has hablado con nadie",
+                  subtitle: "Busca a alguien con quien hablar",
+                );
               }
               return ListView.builder(
                 padding: EdgeInsets.all(10),

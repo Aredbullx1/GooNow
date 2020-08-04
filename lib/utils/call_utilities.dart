@@ -1,5 +1,7 @@
 import 'dart:math';
-
+import '../constants/strings.dart';
+import '../models/log.dart';
+import '../resources/local_db/repository/log_repository.dart';
 import 'package:flutter/material.dart';
 import '../models/call.dart';
 import '../models/user.dart';
@@ -20,11 +22,22 @@ class CallUtils {
       channelId: Random().nextInt(1000).toString(),
     );
 
+    Log log = Log(
+      callerName: from.name,
+      callerPic: from.profilePhoto,
+      callStatus: CALL_STATUS_DIALLED,
+      receiverName: to.name,
+      receiverPic: to.profilePhoto,
+      timestamp: DateTime.now().toString(),
+    );
+
     bool callMade = await callMethods.makeCall(call: call);
 
     call.hasDialled = true;
 
     if (callMade) {
+      LogRepository.addLogs(log);
+
       Navigator.push(
           context,
           MaterialPageRoute(

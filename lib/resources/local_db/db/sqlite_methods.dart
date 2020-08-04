@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:GooNow/models/log.dart';
-import 'package:GooNow/resources/local_db/interface/log_interface.dart';
+import '../../../models/log.dart';
+import '../../../resources/local_db/interface/log_interface.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -9,7 +9,7 @@ import 'package:path/path.dart';
 class SqliteMethods implements LogInterface {
   Database _db;
 
-  String databaseName = "LogDB";
+  String databaseName = "";
 
   String tableName = "Call_Logs";
 
@@ -30,6 +30,9 @@ class SqliteMethods implements LogInterface {
     _db = await init();
     return _db;
   }
+
+  @override
+  openDb(dbName) => (databaseName = dbName);
 
   @override
   init() async {
@@ -56,8 +59,7 @@ class SqliteMethods implements LogInterface {
   @override
   deleteLogs(int logId) async {
     var dbClient = await db;
-    return await dbClient
-        .delete(tableName, where: '$id = ?', whereArgs: [logId]);
+    return await dbClient.delete(tableName, where: '$id = ?', whereArgs: [logId + 1]);
   }
 
   updateLogs(Log log) async {

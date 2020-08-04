@@ -1,4 +1,5 @@
-import 'package:GooNow/screens/pageviews/logs/log_screen.dart';
+import '../resources/local_db/repository/log_repository.dart';
+import '../screens/pageviews/logs/log_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -56,6 +57,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       _authMethods.setUserState(
         userId: userProvider.getUser.uid,
         userState: UserState.Online,
+      );
+
+      LogRepository.init(
+        isHive: true,
+        dbName: userProvider.getUser.uid,
       );
     });
 

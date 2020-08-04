@@ -1,6 +1,8 @@
-import 'package:GooNow/models/log.dart';
+import '../../../models/log.dart';
 
 abstract class LogInterface {
+  openDb(dbName);
+  
   init();
 
   addLogs(Log log);
